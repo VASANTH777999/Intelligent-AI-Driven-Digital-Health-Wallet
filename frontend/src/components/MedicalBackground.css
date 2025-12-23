@@ -1,0 +1,70 @@
+.medical-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.medical-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.medical-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%,
+            transparent 0%,
+            rgba(15, 23, 42, 0.3) 50%,
+            rgba(15, 23, 42, 0.6) 100%);
+}
+
+/* Pulsing animation for medical elements */
+@keyframes medicalPulse {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+/* Additional decorative elements */
+.medical-background::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: medicalPulse 4s ease-in-out infinite;
+}
+
+.medical-background::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: medicalPulse 5s ease-in-out infinite 1s;
+}

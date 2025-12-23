@@ -1,0 +1,336 @@
+.analysis-page {
+    min-height: calc(100vh - 73px);
+    padding: 2rem 0;
+}
+
+.analysis-controls {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    flex: 1;
+    min-width: 300px;
+}
+
+.control-group .input-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.btn-analyze {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    min-width: 200px;
+}
+
+.analyzing-state {
+    padding: 3rem;
+    text-align: center;
+}
+
+.analyzing-animation {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: pulseRing 2s ease-out infinite;
+}
+
+@keyframes pulseRing {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.analyzing-animation svg {
+    color: var(--primary);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.analyzing-state h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.analyzing-state p {
+    color: var(--text-secondary);
+}
+
+.analysis-results {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.summary-card {
+    padding: 2rem;
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--success);
+}
+
+.summary-header h2 {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.summary-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin: 0 0 1.5rem 0;
+}
+
+.voice-controls {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-voice {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.voice-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-full);
+}
+
+.pulse-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+}
+
+
+.flash-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.recommendations-section {
+    padding: 2rem;
+}
+
+.recommendations-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.recommendation-card {
+    padding: 1.5rem;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary);
+    transition: all var(--transition-normal);
+}
+
+.recommendation-card:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+}
+
+.recommendation-card.priority-high {
+    border-left-color: var(--danger);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.recommendation-card.priority-medium {
+    border-left-color: var(--warning);
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.recommendation-card.priority-low {
+    border-left-color: var(--success);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.rec-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.rec-category {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.rec-priority {
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.rec-priority.priority-high {
+    background: var(--danger);
+    color: white;
+}
+
+.rec-priority.priority-medium {
+    background: var(--warning);
+    color: white;
+}
+
+.rec-priority.priority-low {
+    background: var(--success);
+    color: white;
+}
+
+.rec-advice {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.consult-doctor-card {
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+    border: 2px solid rgba(239, 68, 68, 0.3);
+}
+
+.consult-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--danger);
+}
+
+.consult-header h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.consult-doctor-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.chat-toggle {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.btn-chat {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+.chat-section {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .analysis-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .control-group {
+        min-width: 100%;
+    }
+
+    .btn-analyze {
+        width: 100%;
+    }
+
+    .flash-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+}
