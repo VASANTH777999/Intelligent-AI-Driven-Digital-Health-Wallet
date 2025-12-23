@@ -1,5 +1,7 @@
 GUYS FIRST JUST RUN WITH python 2careai.py WHICH WILL INSTALL ALL DEPENDENCIES AND SETUP FRONEND AND BACKEND
 
+ANY DOUBTS- CHECK HERE - https://drive.google.com/file/d/10Xuc3WoPVEINDwiAKtmv7lsKqVaFRY82/view?usp=sharing
+
 LATER MAKE SURE -
 
 Before Running the project **make sure Node.js is installed** and **all the node modules of the project are downloaded while running if not need to download the node modules** for perfectly Functioning also **replace the API Key with your owns in groq.js file**as currently its using mine and run the completely advanced **AI Integrated Intelligent Digital Health Wallet**
@@ -455,6 +457,7 @@ For issues or questions, please create an issue in the repository or contact kot
 ---
 
 **Made with ❤️ for better health management**
+
 
 
 
